@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="SGR Construction LLC – Fence installations in Eastern NC & Triangle. Wood, Vinyl, Chain Link, Repairs.">
+
+  <title>SGR CONSTRUCTION LLC</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <a href="https://www.facebook.com/people/SGR-Construction-LLC/61556077866627/" target="_blank" class="fb-button">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" 
+         alt="Facebook" width="20" height="20">
+         <span class="fb-label">Facebook</span>
+  </a>
+  <div class="top-contact-buttons">
+    <a href="sms:9197096512">
+      <button type="button">Text Now</button>
+    </a>
+    <a href="tel:9197096512">
+      <button type="button">Call Now</button>
+    </a>
+  </div>
+  <header>
+    <a href="/" class="logo-header">
+      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="SGR Logo">
+    </a>
+    <h1>SGR CONSTRUCTION LLC </h1>
+    <h2>Fence Installations</h2>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero">
+      <div class="hero-content">
+        <h2>Quality Fence Installations</h2>
+        <p>Specializing in building your dream fence for you and your property.</p>
+      </div>
+    </section>
+
+    <section id="services">
+      <h2>Our Services</h2>
+      <ul>
+        <li>Wood Fence</li>
+        <li>Vinyl Privacy Fence</li>
+        <li>Ornamental Rail Fence</li>
+        <li>Black Chain link</li>
+        <li>Galvanized Chain link</li>
+        <li>Fence Repairs</li>
+      </ul>
+    </section>
+
+
+    <section id="gallery">
+      <h2>Our Work</h2>
+      <div class="slideshow-container">
+        <img class="slide" src="{{ url_for('static', filename='images/sgr1.png') }}" alt="sgr 1">
+        <img class="slide" src="{{ url_for('static', filename='images/sgr2.png') }}" alt="sgr 2">
+        <img class="slide" src="{{ url_for('static', filename='images/sgr3.png') }}" alt="sgr 3">
+        <img class="slide" src="{{ url_for('static', filename='images/sgr4.png') }}" alt="sgr 4">
+        <img class="slide" src="{{ url_for('static', filename='images/sgr5.png') }}" alt="sgr 5">
+        <img class="slide" src="{{ url_for('static', filename='images/sgr6.png') }}" alt="sgr 6">
+        <img class="slide" src="{{ url_for('static', filename='images/sgr7.png') }}" alt="sgr 7">
+        <img class="slide" src="{{ url_for('static', filename='images/sgr8.png') }}" alt="sgr 8">
+        <img class="slide" src="{{ url_for('static', filename='images/sgr9.png') }}" alt="sgr 9">
+        <img class="slide" src="{{ url_for('static', filename='images/sgr10.png') }}" alt="sgr 10">
+        <img class="slide" src="{{ url_for('static', filename='images/sgr11.png') }}" alt="sgr 11">
+        <img class="slide" src="{{ url_for('static', filename='images/sgr12.png') }}" alt="sgr 12">
+        <img class="slide" src="{{ url_for('static', filename='images/sgr13.png') }}" alt="sgr 13">
+    
+        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+
+      </div>
+    </section>
+  
+
+<section id="about">
+  <h2>About Us</h2>
+  <div class="about-text">
+    <p>SGR Construction proudly serves Eastern North Carolina and the Triangle area, bringing years of hands-on experience to every project.</p>
+    <p>We specialize in high-quality fence and deck installations with a commitment to honest and transparent estimates,
+     durable craftsmanship that lasts, and efficient timelines and professional service. When you choose SGR Construction,
+      you're choosing peace of mind, property protection, and long-term curb appeal.</p>
+      <a href="https://g.co/kgs/Ju7FmoJ" target="_blank" class="google-button">
+        ⭐ See Our Reviews on Google
+      </a>
+  </div>
+</section>
+
+    <section id="contact">
+      <h2>Contact Us For A Free Estimate</h2>
+      <p>919-709-6512</p>
+      <p>Srconstruction236@gmail.com</p>
+
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <ul class="flash">
+            {% for message in messages %}
+              <li>{{ message }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      {% endwith %}
+
+      <form action="https://formspree.io/f/xyzjjqkj" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" required>
+          </div>
+        </div>
+      
+        <div class="form-row">
+          <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" name="address" required>
+          </div>
+          <div class="form-group">
+            <label for="fence_type">Fence Type</label>
+            <select name="fence_type" required>
+              <option value="">-- Select --</option>
+              <option value="Wood">Wood</option>
+              <option value="Vinyl Privacy">Vinyl Privacy</option>
+              <option value="Ornamental Rail">Ornamental Rail</option>
+              <option value="Black Chain Link">Black Chain Link</option>
+              <option value="Galvanized Chain Link">Galvanized Chain Link</option>
+              <option value="Fence Repairs">Fence Repairs</option>
+            </select>
+          </div>
+        </div>
+      
+        <div class="form-row">
+          <div class="form-group">
+            <label for="gates"># of Gates</label>
+            <input type="number" name="gates" min="0" required>
+          </div>
+          <div class="form-group">
+            <label for="feet">How Many Feet?</label>
+            <input type="number" name="feet" min="0" required>
+          </div>
+        </div>
+      
+        <div class="form-group full-width">
+          <label for="message">Additional Details</label>
+          <textarea name="message" rows="4" placeholder="Any special requests or details?"></textarea>
+        </div>
+      
+        <!-- Optional success message -->
+        <input type="hidden" name="_next" value="https://yoursite.com/thank-you.html">
+        
+        <button type="submit">Send Request</button>
+      </form>
+      
+      
+    </section>
+  </main>
+<footer>
+  <p>© 2025 SGR Construction LLC. All rights reserved.</p>
+</footer>
+
+<script>
+  let slideIndex = 0;
+  let slides;
+  let autoSlideInterval;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.style.display = (i === index) ? "block" : "none";
+    });
+  }
+
+  function changeSlide(step) {
+    slideIndex += step;
+    if (slideIndex >= slides.length) slideIndex = 0;
+    if (slideIndex < 0) slideIndex = slides.length - 1;
+    showSlide(slideIndex);
+    resetAutoSlide();
+  }
+
+  function autoSlide() {
+    slideIndex = (slideIndex + 1) % slides.length;
+    showSlide(slideIndex);
+  }
+
+  function resetAutoSlide() {
+    clearInterval(autoSlideInterval);
+    autoSlideInterval = setInterval(autoSlide, 3000);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    if (window.location.hash === "#gallery") {
+      history.replaceState(null, null, " ");
+    }
+
+    slides = document.querySelectorAll(".slide");
+    showSlide(slideIndex);
+    autoSlideInterval = setInterval(autoSlide, 3000);
+  });
+</script>
+</body>
+</html>

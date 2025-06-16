@@ -1,0 +1,368 @@
+/* === Global Styles === */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* === Header & Nav === */
+header {
+  position: relative;
+  background-color: #030506;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+nav a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.logo-header {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 10;
+}
+
+.logo-header img {
+  width: 175px;
+  height: auto;
+}
+
+/* === Sections === */
+section {
+  padding: 2rem;
+  background-color: #f4f4f4;
+  margin: 1rem auto;
+  max-width: 800px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* === Hero Section === */
+#hero {
+  background-image: url("/static/images/hero.png");
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 40px;
+  position: relative;
+  color: white;
+  text-align: center;
+}
+
+.hero-content {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  max-width: 600px;
+  width: fit-content;
+}
+
+#hero h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.3rem;
+}
+
+#hero p {
+  font-size: 0.9rem;
+}
+
+/* === Services Section === */
+#services ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+  gap: 12px;
+}
+
+#services li {
+  font-size: 1.1rem;
+  margin: 10px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  display: inline-block;
+  color: #fff;
+  background: linear-gradient(135deg, #888888, #666666);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease;
+}
+
+#services li:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #777777, #555555);
+}
+
+/* === About Section === */
+#about {
+  max-width: 800px;
+  margin: 1rem auto;
+  padding: 2rem;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.about-text {
+  font-size: 1.05rem;
+  color: #444;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.about-text p {
+  margin-bottom: 0.6rem;
+}
+
+.google-button {
+  display: inline-block;
+  background-color: #f1cf6e;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.google-button:hover {
+  background-color: #d65133;
+}
+
+/* === Slideshow === */
+.slideshow-container {
+  position: relative;
+  max-width: 800px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.slide {
+  width: 100%;
+  max-height: 600px;
+  object-fit: contain;
+  display: none;
+  margin: auto;
+  border-radius: 8px;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  padding: 12px;
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  user-select: none;
+  transform: translateY(-50%);
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* === Contact Buttons (Fixed Top Right) === */
+.fb-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: inline-flex;
+  align-items: center;
+  background-color: #1877F2;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  z-index: 999;
+  transition: background-color 0.3s ease;
+}
+
+.fb-button:hover {
+  background-color: #145dbf;
+}
+
+.fb-button img {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+@media screen and (max-width: 500px) {
+  .fb-label {
+    display: none;
+  }
+
+  .fb-button {
+    padding: 8px;
+  }
+
+  .fb-button img {
+    margin-right: 0;
+  }
+}
+
+.top-contact-buttons {
+  position: fixed;
+  top: 70px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 998;
+}
+
+.top-contact-buttons a button {
+  background-color: #e0e0e0;
+  color: #000000;
+  border: 1px solid #bbb;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.top-contact-buttons a button:hover {
+  background-color: #d5d5d5;
+}
+
+/* === Contact Form === */
+.form-row {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.form-group {
+  flex: 1;
+  min-width: 240px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  font-size: 13px;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.full-width {
+  width: 100%;
+  margin-top: 10px;
+}
+
+#contact button {
+  margin-top: 12px;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#contact button:hover {
+  background-color: #555;
+}
+
+/* Flash Message */
+.flash {
+  list-style-type: none;
+  background-color: #d4edda;
+  color: #155724;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #c3e6cb;
+  border-radius: 5px;
+}
+
+/* === Responsive Adjustments === */
+@media screen and (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #hero {
+    height: 40vh;
+    padding-top: 20px;
+  }
+
+  #hero h2 {
+    font-size: 1.1rem;
+  }
+
+  #hero p {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  .about-text {
+    font-size: 0.85rem;  /* Smaller font on phones */
+    line-height: 1.4;
+  }
+
+  #about h2 {
+    font-size: 1.2rem;  /* Optional: shrink the section header */
+  }
+}
+@media screen and (max-width: 600px) {
+  .logo-header {
+    margin-right: 12px;
+  }
+
+  header h1 {
+    font-size: 1.1rem;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
