@@ -30,6 +30,10 @@ def contact():
 
     flash('Thank you for reaching out! We will contact you shortly.')
     return redirect('/')
+@app.after_request
+def add_header(response):
+    response.headers["Cache-Control"] = "no-store"
+    return response
 
 if __name__ == '__main__':
     app.run(debug=True)
